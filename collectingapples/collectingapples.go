@@ -46,9 +46,9 @@ func Solution(A []int, K int, L int) int {
 		i := 0
 		forAlice := A[i:K]
 		maxForAlice := totalA(forAlice)
-		for _; i<totalSomeOne(len(A), K)-1; i++{
+		for _; i < totalSomeOne(len(A), K)-1; i++ {
 			if totalA(A[i:K+i]) > maxForAlice {
-				maxForAlice := totalA(A[i:K+i])
+				maxForAlice := totalA(A[i : K+i])
 			}
 		}
 		for {
@@ -61,7 +61,7 @@ func Solution(A []int, K int, L int) int {
 			if len(rightA) >= L {
 
 			}
-			bagChannel<- SomeThing{forAlice: forAlice, forBob: }
+			bagChannel <- SomeThing{forAlice: forAlice, forBob: }
 			stepK++
 		}
 	}()

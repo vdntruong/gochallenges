@@ -1,8 +1,9 @@
 package collectingapples_test
 
 import (
-	"github.com/vdntruong/chl/collectingapples"
 	"testing"
+
+	"github.com/vdntruong/chl/collectingapples"
 )
 
 type (
