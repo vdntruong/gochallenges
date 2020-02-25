@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"sort"
 	"strings"
+
+	"github.com/vdntruong/chl/clock"
 )
 
 func canBeatingWithString(B []string, curRow, curCol, count int, direct string) int {
@@ -102,48 +103,57 @@ func canBeating(B []string, curRow, curCol int) int {
 	return 0
 }
 
+// func main() {
+// 	ip := []string{
+// 		`..X...`,
+// 		`......`,
+// 		`....X.`,
+// 		`.X....`,
+// 		`..X.X.`,
+// 		`...O..`,
+// 	}
+// 	ip2 := []string{
+// 		`X....`,
+// 		`.X...`,
+// 		`..O..`,
+// 		`...X.`,
+// 		`.....`,
+// 	}
+// 	ip3 := []string{
+// 		`.....`,
+// 		`.X.X.`,
+// 		`.....`,
+// 		`.X.X.`,
+// 		`..O..`,
+// 	}
+// 	ip4 := []string{
+// 		`.......`,
+// 		`..X.X..`,
+// 		`.......`,
+// 		`X.X.X..`,
+// 		`.......`,
+// 		`..X.X..`,
+// 		`...O...`,
+// 	}
+// 	fmt.Println(solution(ip))
+// 	fmt.Println(solution(ip2))
+// 	fmt.Println(solution(ip3))
+// 	fmt.Println(solution(ip4))
+// 	// fmt.Println(solutionWithString(ip4))
+// 	hello := sort.StringSlice{
+// 		"cba",
+// 		"bca",
+// 		"abc",
+// 	}
+// 	hello.Sort()
+// 	fmt.Println(hello)
+// }
+
 func main() {
-	ip := []string{
-		`..X...`,
-		`......`,
-		`....X.`,
-		`.X....`,
-		`..X.X.`,
-		`...O..`,
-	}
-	ip2 := []string{
-		`X....`,
-		`.X...`,
-		`..O..`,
-		`...X.`,
-		`.....`,
-	}
-	ip3 := []string{
-		`.....`,
-		`.X.X.`,
-		`.....`,
-		`.X.X.`,
-		`..O..`,
-	}
-	ip4 := []string{
-		`.......`,
-		`..X.X..`,
-		`.......`,
-		`X.X.X..`,
-		`.......`,
-		`..X.X..`,
-		`...O...`,
-	}
-	fmt.Println(solution(ip))
-	fmt.Println(solution(ip2))
-	fmt.Println(solution(ip3))
-	fmt.Println(solution(ip4))
-	// fmt.Println(solutionWithString(ip4))
-	hello := sort.StringSlice{
-		"cba",
-		"bca",
-		"abc",
-	}
-	hello.Sort()
-	fmt.Println(hello)
+	// rs := clock.Solution(1, 8, 3, 2)
+	// fmt.Println(rs)
+	rs := clock.Solution(2, 3, 3, 2)
+	fmt.Println(rs)
+	// rs := clock.Solution(6, 2, 4, 7)
+	// fmt.Println(rs)
 }

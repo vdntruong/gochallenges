@@ -42,29 +42,29 @@ func Solution(A []int, K int, L int) int {
 	bagChannel := make(chan SomeThing, maxSomeThing(len(A), K, L))
 	wg := sync.WaitGroup{}
 
-	go func() {
-		i := 0
-		forAlice := A[i:K]
-		maxForAlice := totalA(forAlice)
-		for _; i < totalSomeOne(len(A), K)-1; i++ {
-			if totalA(A[i:K+i]) > maxForAlice {
-				maxForAlice := totalA(A[i : K+i])
-			}
-		}
-		for {
-			leftA := A[:stepK]
-			rightA := A[stepK:]
+	// go func() {
+	// 	i := 0
+	// 	forAlice := A[i:K]
+	// 	maxForAlice := totalA(forAlice)
+	// 	for _; i < totalSomeOne(len(A), K)-1; i++ {
+	// 		if totalA(A[i:K+i]) > maxForAlice {
+	// 			maxForAlice := totalA(A[i : K+i])
+	// 		}
+	// 	}
+	// 	for {
+	// 		leftA := A[:stepK]
+	// 		rightA := A[stepK:]
 
-			if len(leftA) >= L {
+	// 		if len(leftA) >= L {
 
-			}
-			if len(rightA) >= L {
+	// 		}
+	// 		if len(rightA) >= L {
 
-			}
-			bagChannel <- SomeThing{forAlice: forAlice, forBob: }
-			stepK++
-		}
-	}()
+	// 		}
+	// 		// bagChannel <- SomeThing{forAlice: forAlice, forBob: }
+	// 		stepK++
+	// 	}
+	// }()
 
 	go func() {
 		wg.Add(1)
