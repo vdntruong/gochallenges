@@ -37,6 +37,12 @@ func TestSolution(t *testing.T) {
 			output: "ADD e",
 		},
 		{
+			desc:   "Change words, at the first",
+			inputS: "hent",
+			inputT: "tent",
+			output: "CHANGE h t",
+		},
+		{
 			desc:   "Change words, at the middle",
 			inputS: "test",
 			inputT: "tent",
@@ -47,12 +53,12 @@ func TestSolution(t *testing.T) {
 			inputS: "tent",
 			inputT: "tens",
 			output: "CHANGE t s",
-		},
+		},		
 		{
-			desc:   "Change words, at the first",
-			inputS: "hent",
-			inputT: "tent",
-			output: "CHANGE h t",
+			desc:   "Change words, special case",
+			inputS: "welcome",
+			inputT: "wellhel",
+			output: "IMPOSSIBLE",
 		},
 		{
 			desc:   "Move words, at the first",
@@ -66,11 +72,17 @@ func TestSolution(t *testing.T) {
 			inputT: "banes",
 			output: "MOVE e",
 		},
+		// {
+		// 	desc:   "Move words, at the end",
+		// 	inputS: "beans",
+		// 	inputT: "beans",
+		// 	output: "IMPOSSIBLE",
+		// },
 		{
-			desc:   "Move words, at the end",
-			inputS: "beans",
-			inputT: "beasn",
-			output: "MOVE s",
+			desc:   "Move words, special case",
+			inputS: "beeaans",
+			inputT: "beaaens",
+			output: "MOVE e",
 		},
 	}
 	for _, tC := range testCases {

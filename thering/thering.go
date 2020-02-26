@@ -18,6 +18,9 @@ func counted(ps []Point, p Point) bool {
 }
 
 func Solution(inner, outer int, x []int, y []int) (rs int) {
+	if inner < 0 || inner > 9_999 || outer < 1 || outer > 10_000 {
+		return rs
+	}
 	if len(x) != len(y) || inner >= outer {
 		return rs
 	}
