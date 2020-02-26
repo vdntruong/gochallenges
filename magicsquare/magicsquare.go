@@ -1,6 +1,8 @@
 package magicsquare
 
-import "math"
+import (
+	"math"
+)
 
 func findRowColumnNumbers(a [][]int) (row int, column int) {
 	row = len(a)
@@ -8,26 +10,18 @@ func findRowColumnNumbers(a [][]int) (row int, column int) {
 	return
 }
 
-func getSquare(a [][]int, size int, startRow int, startCol int) [][]int {
-	if startRow + size - 1 > len(a){
-		return make([][]int, 0)
+func getSquare(a [][]int, size int, startRow int, startCol int) ([][]int, bool) {
+	if startRow > len(a)-size ||
+		startCol > len(a[0])-size {
+		return make([][]int, 0), true
 	}
-	if startCol + size - 1 > len(a[0]){
-		return make([][]int, 0)
-	}
-	if startRow > len(a) - size {
-		return make([][]int, 0)
-	}
-	if startCol > len(a[0]) - size {
-		return make([][]int, 0)
-	}
-	len := startRow + size
 	rs := make([][]int, 0)
+	len := startRow + size
 	for i := startRow; i < len; i++ {
-		newRow := a[i][startCol:startCol+size]
+		newRow := a[i][startCol : startCol+size]
 		rs = append(rs, newRow)
 	}
-	return rs
+	return rs, false
 }
 
 func totalOfS(s []int) (total int) {
@@ -38,12 +32,11 @@ func totalOfS(s []int) (total int) {
 	return
 }
 
-func isMagicSquare(a [][]int) bool {
-	if len(a) == 0 || len(a[0])==0{
-		return false
-	}
-	if len(a) != len(a[0]) {
-		return false
+func isMagicSquare(a [][]int) (int, bool) {
+	if len(a) == 0 ||
+		len(a[0]) == 0 ||
+		len(a) != len(a[0]) {
+		return 0, false
 	}
 	trustTotal := totalOfS(a[0])
 	fistDiagonal := make([]int, 0)
@@ -52,46 +45,47 @@ func isMagicSquare(a [][]int) bool {
 	// check all total row
 	for i := 0; i < len(a); i++ {
 		if totalOfS(a[i]) != trustTotal {
-			return false
+			return 0, false
 		}
 
 		// check all total column
 		orderCol := make([]int, 0)
-		for j:=0; j<len(a);j++ {
+		for j := 0; j < len(a); j++ {
 			orderCol = append(orderCol, a[j][i])
 		}
-		if totalOfS(orderCol) != trustTotal{
-			return false
+		if totalOfS(orderCol) != trustTotal {
+			return 0, false
 		}
 
 		fistDiagonal = append(fistDiagonal, a[i][i])
-		secondDiagonal = append(secondDiagonal, a[i][len(a) - i])
+		secondDiagonal = append(secondDiagonal, a[i][len(a)-i-1])
 	}
-	// checl two diagonals
-	if totalOfS(fistDiagonal) != trustTotal {
-		return false
+	// check two diagonals
+	if totalOfS(fistDiagonal) != trustTotal ||
+		totalOfS(secondDiagonal) != trustTotal {
+		return 0, false
 	}
-	if totalOfS(secondDiagonal) != trustTotal {
-		return false
-	}
-	return true
+	return trustTotal, true
 }
 
 func Solution(a [][]int) int {
 	row, col := findRowColumnNumbers(a)
 	maxSquare := int(math.Max(float64(row), float64(col)))
 
-	for rs:= maxSquare; rs >1; rs++ {
-		for i:= 0; i<len(a); i++{
-			for j:= 0; j<len(a[0]); j++{
-				prepareSquareToCheck := getSquare(a, rs, i, j)
-				if isMagicSquare(prepareSquareToCheck){
+	for rs := maxSquare; rs > 1; rs-- {
+
+		for i := 0; i < len(a); i++ {
+			for j := 0; j < len(a[0]); j++ {
+				prepareSquareToCheck, outRange := getSquare(a, rs, i, j)
+				if outRange {
+					break
+				}
+				if _, isMagic := isMagicSquare(prepareSquareToCheck); isMagic {
 					return rs
 				}
 			}
 		}
-	}
-	
 
+	}
 	return 1
 }
