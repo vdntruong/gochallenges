@@ -53,7 +53,7 @@ func TestSolution(t *testing.T) {
 			inputS: "tent",
 			inputT: "tens",
 			output: "CHANGE t s",
-		},		
+		},
 		{
 			desc:   "Change words, special case",
 			inputS: "welcome",

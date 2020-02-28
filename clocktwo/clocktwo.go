@@ -6,8 +6,6 @@ import (
 )
 
 const (
-	MinHour   = 0
-	MinMinute = 0
 	MaxHour   = 23
 	MaxMinute = 59
 )
@@ -57,6 +55,7 @@ func Solution(mainAr []int) int {
 				outSetChannel <- found
 			}
 		}
+
 		close(outSetChannel)
 	}()
 
@@ -65,11 +64,8 @@ func Solution(mainAr []int) int {
 	go func() {
 		defer wg.Done()
 		ourTimes := make([]Tim, 0)
+
 		for newCase := range outSetChannel {
-			// newCase, ok := <-outSetChannel
-			// if !ok {
-			// 	break
-			// }
 			newTim := createTim(newCase)
 			if checkTime(newTim) && notDuplicateTime(ourTimes, newTim) {
 				ourTimes = append(ourTimes, newTim)

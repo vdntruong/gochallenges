@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/vdntruong/chl/magicsquare"
+	"github.com/vdntruong/chl/seasons"
 )
 
 func canBeatingWithString(B []string, curRow, curCol, count int, direct string) int {
@@ -157,15 +157,15 @@ func main() {
 	// rs := clock.Solution(6, 2, 4, 7)
 	// fmt.Println(rs)
 
-	rs := magicsquare.Solution([][]int{
-		[]int{4, 9, 2, 4, 9, 2},
-		[]int{3, 5, 7, 3, 5, 7},
-		[]int{8, 1, 6, 8, 1, 6},
-		[]int{4, 9, 2, 4, 9, 2},
-		[]int{3, 5, 7, 3, 0, 0},
-		[]int{8, 1, 6, 8, 0, 0},
-	})
-	fmt.Println("rs ", rs)
+	// rs := magicsquare.Solution([][]int{
+	// 	[]int{4, 9, 2, 4, 9, 2},
+	// 	[]int{3, 5, 7, 3, 5, 7},
+	// 	[]int{8, 1, 6, 8, 1, 6},
+	// 	[]int{4, 9, 2, 4, 9, 2},
+	// 	[]int{3, 5, 7, 3, 0, 0},
+	// 	[]int{8, 1, 6, 8, 0, 0},
+	// })
+	// fmt.Println("rs ", rs)
 	// magicsquare.Solution([][]int{
 	// 	[]int{1, 23, 16, 4, 21},
 	// 	[]int{15, 14, 7, 18, 11},
@@ -173,4 +173,5 @@ func main() {
 	// 	[]int{20, 8, 19, 12, 6},
 	// 	[]int{5, 3, 10, 22, 25},
 	// })
+	seasons.Solution([]int{0, -1000, 1000, 0, -5, 9, 0, -1000, 999, 2, -4, -9})
 }

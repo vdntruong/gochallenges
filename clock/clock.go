@@ -63,7 +63,7 @@ func Solution(a, b, c, d int) int {
 	wg.Add(1)
 	go func() {
 		for {
-			if len(ourIndexSet) == 24 {
+			if len(ourIndexSet) == TotalCase {
 				break
 			}
 			tempAr := mainAr
