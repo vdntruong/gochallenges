@@ -7,7 +7,7 @@ import (
 func youCanDoIt(number int) int {
 	sq := math.Sqrt(float64(number))
 	if sq == float64(int64(sq)) {
-		return 1 + canDoIt(int(sq))
+		return 1 + youCanDoIt(int(sq))
 	}
 	return 0
 }

@@ -1,5 +1,7 @@
 package rotatedice
 
+import "github.com/sirupsen/logrus"
+
 func contain(a []int, v int) bool {
 	for _, x := range a {
 		if x == v {
@@ -24,7 +26,7 @@ func Solution(a []int) int {
 		2: 5, 5: 2,
 		3: 4, 4: 3,
 	}
-
+	logrus.Info(oppositeFaces)
 	countFaceList := make(map[int]int)
 	maxCount := 0
 	maxFaceCount := -1
