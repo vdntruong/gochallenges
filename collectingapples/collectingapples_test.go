@@ -46,6 +46,15 @@ func TestSolution(t *testing.T) {
 			},
 			output: 24,
 		},
+		{
+			name: "Case 04",
+			input: inputStr{
+				A: []int{2, 8, 9, 9, 9, 8, 2},
+				K: 3,
+				L: 2,
+			},
+			output: 43,
+		},
 	}
 
 	for _, test := range testCases {

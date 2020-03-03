@@ -19,6 +19,13 @@ func TestSolution(t *testing.T) {
 			inputC: 2,
 			output: "cbc",
 		},
+		// {
+		// 	desc:   "Test case 02",
+		// 	inputA: 6,
+		// 	inputB: 4,
+		// 	inputC: 2,
+		// 	output: "aababacbaacb",
+		// },
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {

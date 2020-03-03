@@ -8,19 +8,19 @@ import (
 
 func TestSolution(t *testing.T) {
 	testCases := []struct {
-		desc	string
+		desc   string
 		inputS string
 		inputT string
 		output int
 	}{
 		{
-			desc: "Test case 01 of challenge",
+			desc:   "Test case 01 of challenge",
 			inputS: "15:15:00",
 			inputT: "15:15:12",
 			output: 1,
 		},
 		{
-			desc: "Test case 02 of challenge",
+			desc:   "Test case 02 of challenge",
 			inputS: "22:22:21",
 			inputT: "22:22:23",
 			output: 3,

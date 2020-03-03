@@ -18,14 +18,14 @@ func Test(t *testing.T) {
 			output:  2,
 		},
 		{
-			desc:    "Test case 03 of challenge",
-			inputAr: []int{1, 6, 2, 3},
-			output:  3,
-		},
-		{
 			desc:    "Test case 02 of challenge",
 			inputAr: []int{1, 1, 6},
 			output:  2,
+		},
+		{
+			desc:    "Test case 03 of challenge",
+			inputAr: []int{1, 6, 2, 3},
+			output:  3,
 		},
 	}
 	for _, tC := range testCases {
