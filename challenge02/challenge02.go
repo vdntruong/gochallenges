@@ -9,10 +9,10 @@ func Solution(a, b, c, d int) (rs int) {
 	cases := deduplicate(shuffle([]int{a, b, c, d}))
 	for _, c := range cases {
 		if validateTime(c) {
-			count++
+			rs++
 		}
 	}
-	return count
+	return rs
 }
 
 var timeRegexp = regexp.MustCompile("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$")
