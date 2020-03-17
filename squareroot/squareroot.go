@@ -1,22 +1,20 @@
 package squareroot
 
-import (
-	"math"
-)
+import "math"
 
-func youCanDoIt(number int) int {
+func countTimes(number int) (rs int) {
 	sq := math.Sqrt(float64(number))
 	if sq == float64(int64(sq)) {
-		return 1 + youCanDoIt(int(sq))
+		return 1 + countTimes(int(sq))
 	}
-	return 0
+	return rs
 }
 
 func Solution(a, b int) (rs int) {
 	for ; a <= b; a++ {
-		curMax := youCanDoIt(a)
-		if curMax > rs {
-			rs = curMax
+		maxTimes := countTimes(a)
+		if maxTimes > rs {
+			rs = maxTimes
 		}
 	}
 	return rs

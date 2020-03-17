@@ -8,31 +8,28 @@ var (
 	}
 )
 
-func findMin(a []int) int {
-	min := a[0]
+func countTimesAndSide(a []int) (rs map[int]int, side int) {
+	min := 0
 	for _, v := range a {
-		if min > v {
-			min = v
+		rs[v]++
+		min = rs[v]
+		side = v
+	}
+	for k, v := range rs {
+		if rs[oppositeFaces[k]] != 0 {
+			rs[k] = v * 2
+		}
+		if rs[k] < min {
+			min = rs[k]
+			side = k
 		}
 	}
-	return min
+	return rs, side
 }
+
 func Solution(a []int) int {
+	for i := 1; i < 7; i++ {
 
-	siteCenter := []int{}
-	for i := 0; i < len(a); i++ {
-		count := 0
-		for j := 0; j < len(a); j++ {
-			if a[i] == a[j] {
-				continue
-			}
-			if oppositeFaces[a[i]] == a[j] {
-				count++
-			}
-			count++
-		}
-		siteCenter = append(siteCenter, count)
 	}
-
-	return findMin(siteCenter)
+	return 0
 }

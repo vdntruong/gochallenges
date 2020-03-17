@@ -19,6 +19,20 @@ func TestSolution(t *testing.T) {
 			inputC: 2,
 			output: "cbc",
 		},
+		{
+			desc:   "Test case 02",
+			inputA: 8,
+			inputB: 8,
+			inputC: 1,
+			output: "cbc",
+		},
+		{
+			desc:   "Test case Quan",
+			inputA: 8,
+			inputB: 8,
+			inputC: 2,
+			output: "cbc",
+		},
 		// {
 		// 	desc:   "Test case 02",
 		// 	inputA: 6,

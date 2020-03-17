@@ -1,13 +1,12 @@
 package seasons
 
 import (
-	"math"
 	"sort"
 )
 
 func findMaxAmplitude(ar []int) int {
 	sort.Ints(ar)
-	return int(math.Abs(float64(ar[len(ar)-1]) - float64(ar[0])))
+	return ar[len(ar)-1] - ar[0]
 }
 
 func Solution(t []int) (rs string) {

@@ -1,12 +1,12 @@
 package bulbshine
 
 func Solution(a []int) (rs int) {
-	curMax := 0
+	max := 0
 	for i := 0; i < len(a); i++ {
-		if a[i] > curMax {
-			curMax = a[i]
+		if a[i] > max {
+			max = a[i]
 		}
-		if curMax <= i+1 {
+		if i+1 >= max {
 			rs++
 		}
 	}
@@ -29,3 +29,24 @@ func Solution(a []int) (rs int) {
 // 	}
 // 	return rs
 // }
+
+func thisIndexOke(a []int, i, max int) bool {
+	if a[i] > max {
+		max = a[i]
+	}
+	if i+1 >= max {
+		if i == 0 {
+			return true
+		}
+		return thisIndexOke(a, i-1, max)
+	}
+	return false
+}
+func NewSolution(a []int) (rs int) {
+	for i := 0; i < len(a); i++ {
+		if thisIndexOke(a, i, 0) {
+			rs++
+		}
+	}
+	return
+}

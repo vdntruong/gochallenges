@@ -12,7 +12,6 @@ func findWeight(a []int) (rs int) {
 func findAllWeight(a [][]int) (map[int]int, map[int]int) {
 	weightRow := make(map[int]int)
 	weightCol := make(map[int]int)
-
 	row, col := findRowCol(a)
 	doneRow := false
 	for i := 0; i < col; i++ {
@@ -55,7 +54,6 @@ func okLeftRightCol(j, col int, weightCol map[int]int) bool {
 func isEquilibriumPoint(i, j, row, col int, weightRow, weightCol map[int]int) bool {
 	return okUpDownRow(i, row, weightRow) && okLeftRightCol(j, col, weightCol)
 }
-
 func Solution(a [][]int) (rs int) {
 	row, col := findRowCol(a)
 	weightRow, weightCol := findAllWeight(a)

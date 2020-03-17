@@ -14,6 +14,12 @@ func TestSolution(t *testing.T) {
 	}{
 		{
 			desc:   "NOTHING",
+			inputS: "aab",
+			inputT: "baa",
+			output: "IMPOSSIBLE",
+		},
+		{
+			desc:   "NOTHING",
 			inputS: "nice",
 			inputT: "nice",
 			output: "NOTHING",

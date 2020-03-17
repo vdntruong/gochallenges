@@ -20,11 +20,35 @@ func TestSolution(t *testing.T) {
 			output: 1,
 		},
 		{
-			desc:   "Test case 02 of challenge",
-			inputS: "22:22:21",
-			inputT: "22:22:23",
-			output: 3,
+			desc:   "Test case 03",
+			inputS: "15:15:00",
+			inputT: "16:16:00",
+			output: 16,
 		},
+		{
+			desc:   "Test case 03",
+			inputS: "15:15:00",
+			inputT: "17:17:00",
+			output: 32,
+		},
+		{
+			desc:   "Test case 04",
+			inputS: "23:22:21",
+			inputT: "23:22:30",
+			output: 2,
+		},
+		// {
+		// 	desc:   "Test case 02 of challenge",
+		// 	inputS: "22:22:21",
+		// 	inputT: "22:22:23",
+		// 	output: 3,
+		// },
+		// {
+		// 	desc:   "Test case 03 of challenge",
+		// 	inputS: "00:00:00",
+		// 	inputT: "22:22:23",
+		// 	output: 3,
+		// },
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {

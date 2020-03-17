@@ -8,31 +8,24 @@ import (
 // a and b in range [0..100000]
 // a <= b
 func Solution(a, b int) int {
-	if a > b {
-		return 0
-	}
-
 	rs := 0
 	for i := a; i <= b; i++ {
 		if !notLovely(i) {
 			rs++
 		}
 	}
-
 	return rs
 }
 
-func notLovely(i int) bool {
+func notLovely(i int) (rs bool) {
 	if i < 111 {
-		return false
+		return
 	}
-
-	istr := strconv.FormatInt(int64(i), 10)
-	for i, _ := range istr {
-		if strings.Count(istr, string(istr[i])) >= 3 {
+	iStr := strconv.FormatInt(int64(i), 10)
+	for i := 0; i < len(iStr); i++ {
+		if strings.Count(iStr, string(iStr[i])) >= 3 {
 			return true
 		}
 	}
-
-	return false
+	return
 }

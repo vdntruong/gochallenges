@@ -115,7 +115,7 @@ func TestSolution(t *testing.T) {
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			if rs := clock.Solution(tC.input[0], tC.input[1], tC.input[2], tC.input[3]); rs != tC.out {
+			if rs := clock.SolutionTwo(tC.input[0], tC.input[1], tC.input[2], tC.input[3]); rs != tC.out {
 				t.Errorf("Got result=%d, wants result=%d", rs, tC.out)
 			}
 		})

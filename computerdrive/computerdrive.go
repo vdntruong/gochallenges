@@ -40,7 +40,6 @@ func getByte(s string) int {
 	}
 	return 0
 }
-
 func Solution(s string) string {
 	arrStr := strings.FieldsFunc(s, func(char rune) bool {
 		return char == '\t' || char == ' ' || char == '\n'
